@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-1"></div>
+		<div class="col-md-10 padding-none">
+
+		</div>
+		<div class="col-md-1"></div>
+    {% for item in CategoryItem %}
+  			<div class="row Catalog-list">
+  				<div class="col-md-1"></div>
+  					<div class="col-md-10 restaurant-list">
+  						<h1>{{item.title}}</h1>
+							<P>{{item.description}}</P>
+							<a href='{{url_for('editItem', Item_name = item.title ) }}'>Edit</a> |
+							<a href='{{url_for('deleteItem', Item_name = item.title ) }}'>Delete</a>
+  					</div>
+  				<div class="col-md-1"></div>
+  			</div>
+  	{% endfor %}
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+<h1>New Category Item</h1>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="50" class="form-control" name="name"placeholder="Name of the Item">
+
+					<label for="description">Description:</label>
+					<textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the Item"></textarea>
+
+					<label for="category">Category:</label>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category1" value="1">Soccer
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category2" value="2">Basketball
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category3" value="3">Baseball
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category4" value="4">Frisbee
+					  </label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="category" id="category5" value="5">Snowboarding
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="category" id="category6" value="6">Rock Climbing
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="category" id="category7" value="7">Foosball
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="category" id="category8" value="8">Skating
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="category" id="category9" value="9">Hockey
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary" id="submit" type="submit">Create</button>
+				</div>
+			</form>
+			<a href = '{{url_for('showLatestItems')}}'>
+				<button class="btn btn-default delete">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+			</a>
+		</div>
+	</div>
+{% endblock %}

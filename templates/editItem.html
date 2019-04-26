@@ -1,0 +1,73 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<h1>Edit Category Item</h1>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="100" class="form-control" name="name" value="{{item.title }}">
+
+					<label for="description">Description:</label>
+					<textarea class="form-control" maxlength="250" rows="3" name="description">{{item.description}}</textarea>
+
+					<label for="category">category:</label>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category1" value="1" {% if item.cat_id == 1 %}checked{%endif%}>Soccer
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category2" value="2" {% if item.cat_id == 2 %}checked{%endif%}>Basketball
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category3" value="3" {% if item.cat_id == 3 %}checked{%endif%}>Baseball
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category4" value="4" {%if item.cat_id == 4 %}checked{%endif%}>Frisbee
+					  </label>
+					</div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="category" id="category5" value="5" {%if item.cat_id == 5 %}checked{%endif%}>Snowboarding
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="category" id="category6" value="6" {%if item.cat_id == 6 %}checked{%endif%}>Rock Climbing
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="category" id="category7" value="7" {%if item.cat_id == 7 %}checked{%endif%}>Foosball
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="category" id="category8" value="8" {%if item.cat_id == 8 %}checked{%endif%}>Skating
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="category" id="category9" value="9" {%if item.cat_id == 9 %}checked{%endif%}>Hockey
+            </label>
+          </div>
+					<button type="submit" class="btn btn-primary" id="submit" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+				</div>
+			</form>
+			<a href = '{{url_for('showLatestItems')}}'>
+				<button class="btn btn-default delete">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+			</a>
+		</div>
+	</div>
+{% endblock %}
